@@ -1,0 +1,10 @@
+.header {
+  background: $color-accent;
+  &-menu {
+    display: flex;
+    justify-content: space-between;
+
+    min-height: 140px;
+    padding-top: 30px;
+  }
+}

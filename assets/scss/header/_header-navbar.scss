@@ -1,0 +1,38 @@
+.header-menu {
+  &__item {
+    &:last-of-type {
+      margin-right: -20px;
+    }
+  }
+  &__link {
+    position: relative;
+
+    display: block;
+
+    padding: 10px 20px;
+
+    letter-spacing: 0.03em;
+
+    font-size: 1.375rem;
+    font-weight: 700;
+    &::after {
+      position: absolute;
+      left: 50%;
+
+      display: block;
+
+      width: 0;
+      height: 4px;
+
+      content: "";
+      transition: width 0.3s ease-in-out;
+      transform: translateX(-50%);
+
+      background-color: $color-primary;
+    }
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.header-menu {
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    margin-top: -5px;
+
+    gap: ($gap / 2);
+    img {
+      display: block;
+    }
+    strong {
+      display: flex;
+
+      font-size: 1.875rem;
+    }
+  }
+}
