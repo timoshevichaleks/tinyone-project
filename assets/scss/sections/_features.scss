@@ -1,0 +1,45 @@
+.features {
+  &__block {
+    margin: 113px 80px;
+
+    text-align: center;
+  }
+  &__title {
+    margin: 0 0 14px;
+  }
+  &__text {
+    margin: 0;
+
+    color: $color-gray-dark;
+
+    font-size: 1.25rem;
+    line-height: 24px;
+  }
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+      display: flex;
+      flex: 0 0 33.33333%;
+
+      gap: 30px;
+    }
+    &__block {
+      order: 2;
+    }
+    &__title {
+      margin: 0;
+
+      font-size: 1.375rem;
+    }
+    &__description {
+      color: $color-gray-light;
+    }
+    &__icon {
+      order: 1;
+      i {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}

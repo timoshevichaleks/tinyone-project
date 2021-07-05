@@ -86,6 +86,9 @@
       i {
         font-size: 2.75rem;
       }
+      a:hover {
+        text-shadow: 0 0 20px $color-light;
+      }
     }
   }
   &__image {
