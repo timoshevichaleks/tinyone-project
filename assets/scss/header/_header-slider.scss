@@ -1,0 +1,121 @@
+.carousel {
+  display: grid;
+
+  @include sm-min {
+    grid-template-rows: minmax(500px, max-content) 100px;
+  }
+  @include sm {
+    grid-template-rows: minmax(300px, max-content) 80px;
+  }
+}
+
+.slides {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  z-index: -999;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  &-content {
+    display: grid;
+
+    padding-top: 20px;
+
+    grid-template-areas: "st1 img" "sp1 img" "ssp1 img" "sb1 img";
+    grid-template-columns: 1fr auto;
+    grid-template-rows: minmax(106px, max-content) auto 1fr auto;
+    @include lg-min {
+      column-gap: 180px;
+    }
+    @include lg-md {
+      column-gap: 60px;
+    }
+    @include md-sm {
+      column-gap: 40px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include sm {
+      column-gap: 20px;
+      grid-template-areas: "st1 st1" "sp1 sp1" "ssp1 img" "sb1 sb1";
+      grid-template-columns: 1fr 1fr;
+    }
+    row-gap: 20px;
+  }
+  &__title {
+    align-self: end;
+
+    margin: 0;
+
+    font-size: 2rem;
+
+    grid-area: st1;
+  }
+  p {
+    margin: 0;
+
+    font-size: 1.25rem;
+
+    grid-area: sp1;
+  }
+  span {
+    color: $color-gray;
+
+    line-height: 1.25;
+
+    grid-area: ssp1;
+  }
+  &.active {
+    z-index: 2;
+
+    opacity: 1;
+  }
+  &__brands {
+    display: flex;
+
+    grid-area: sb1;
+    @include unlist(17px 0 4px, 0);
+    @include sm {
+      justify-content: center;
+    }
+    li {
+      margin-right: 35px;
+      i {
+        font-size: 2.75rem;
+      }
+    }
+  }
+  &__image {
+    padding-top: 4px;
+
+    grid-area: img;
+    @include md-min {
+      margin-right: 30px;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+}
+
+.indicator {
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+  background-color: rgba($color-light, 0.5);
+  &.active {
+    background-color: $color-light;
+  }
+}

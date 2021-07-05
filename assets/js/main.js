@@ -1,8 +1,8 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   /* menu */
-  let $btnHamburger = $('.header-navbar__hamburger');
-  let $navbarList = $('.header-navbar__list');
+  let $btnHamburger = $('.header-menu__hamburger');
+  let $navbarList = $('.header-menu__list');
   let $window = $(window);
   let $body = $('body');
   let isShow = false;
