@@ -1,0 +1,40 @@
+.footer {
+  &-contacts {
+    display: grid;
+
+    color: $color-gray-light;
+
+    gap: $gap;
+    grid-template-columns: 300px repeat(4, 1fr);
+    &__item:first-of-type {
+      a {
+        font-weight: 700;
+      }
+    }
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      transition: border-color 0.5s;
+
+      border-right: 2px solid rgba($color-light, 0.05);
+
+      line-height: 20px;
+      &:hover {
+        border-color: rgba($color-light, 0.1);
+      }
+      a {
+        transition: color 0.5s;
+
+        color: $color-gray-light;
+        &:hover {
+          color: $color-light;
+        }
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
