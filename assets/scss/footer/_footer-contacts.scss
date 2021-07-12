@@ -1,11 +1,29 @@
 .footer {
   &-contacts {
     display: grid;
-
     color: $color-gray-light;
-
-    gap: $gap;
-    grid-template-columns: 300px repeat(4, 1fr);
+    @include lg-min {
+      grid-template-columns: 300px repeat(4, 1fr);
+      gap: $gap;
+    }
+    @include lg-md {
+      grid-template-areas: 'a1 a2 a3' 'a1 a4 a5';
+      grid-template-columns: 350px repeat(2, 1fr);
+      column-gap: $gap;
+      row-gap: 40px;
+    }
+    @include md-sm {
+      grid-template-areas: 'a1 a2 a3' 'a1 a4 a5';
+      grid-template-columns: 300px repeat(2, 1fr);
+      column-gap: $gap;
+      row-gap: 40px;
+    }
+    @include sm {
+      grid-template-areas: 'a1 a1' 'a2 a3' 'a4 a5';
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: $gap;
+      row-gap: 40px;
+    }
     &__item:first-of-type {
       a {
         font-weight: 700;
@@ -15,18 +33,14 @@
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-
       transition: border-color 0.5s;
-
       border-right: 2px solid rgba($color-light, 0.05);
-
       line-height: 20px;
       &:hover {
         border-color: rgba($color-light, 0.1);
       }
       a {
         transition: color 0.5s;
-
         color: $color-gray-light;
         &:hover {
           color: $color-light;
@@ -36,5 +50,11 @@
         margin: 0;
       }
     }
+  }
+}
+
+@for $i from 1 through 5 {
+  .footer-contacts__item:nth-of-type(#{$i}) {
+    grid-area: a#{$i};
   }
 }

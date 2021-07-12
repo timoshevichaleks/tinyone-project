@@ -1,5 +1,9 @@
 .footer {
-  padding: 90px 0 140px;
-
+  @include lg-min {
+    padding: 90px 0 140px;
+  }
+  @include lg {
+    padding: 60px 0 80px;
+  }
   background-color: $color-primary;
 }
