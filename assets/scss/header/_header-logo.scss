@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
 
-    margin-top: -5px;
+    margin-top: -($gap * 0.25);
 
     gap: ($gap / 2);
     img {

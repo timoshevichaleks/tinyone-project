@@ -1,28 +1,31 @@
 .footer {
   &-contacts {
     display: grid;
+
     color: $color-gray-light;
+
     @include lg-min {
-      grid-template-columns: 300px repeat(4, 1fr);
       gap: $gap;
+      grid-template-areas: "a1 a2 a3 a4 a5";
+      grid-template-columns: 300px repeat(4, 1fr);
     }
     @include lg-md {
-      grid-template-areas: 'a1 a2 a3' 'a1 a4 a5';
-      grid-template-columns: 350px repeat(2, 1fr);
       column-gap: $gap;
-      row-gap: 40px;
+      grid-template-areas: "a1 a2 a3" "a1 a4 a5";
+      grid-template-columns: 350px repeat(2, 1fr);
+      row-gap: ($gap * 2);
     }
     @include md-sm {
-      grid-template-areas: 'a1 a2 a3' 'a1 a4 a5';
-      grid-template-columns: 300px repeat(2, 1fr);
       column-gap: $gap;
-      row-gap: 40px;
+      grid-template-areas: "a1 a2 a3" "a1 a4 a5";
+      grid-template-columns: 300px repeat(2, 1fr);
+      row-gap: ($gap * 2);
     }
     @include sm {
-      grid-template-areas: 'a1 a1' 'a2 a3' 'a4 a5';
-      grid-template-columns: repeat(2, 1fr);
       column-gap: $gap;
-      row-gap: 40px;
+      grid-template-areas: "a1 a1" "a2 a3" "a4 a5";
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: ($gap * 2);
     }
     &__item:first-of-type {
       a {
@@ -33,14 +36,18 @@
       display: flex;
       align-items: flex-start;
       flex-direction: column;
+
       transition: border-color 0.5s;
+
       border-right: 2px solid rgba($color-light, 0.05);
-      line-height: 20px;
+
+      line-height: $gap;
       &:hover {
         border-color: rgba($color-light, 0.1);
       }
       a {
         transition: color 0.5s;
+
         color: $color-gray-light;
         &:hover {
           color: $color-light;

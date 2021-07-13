@@ -7,14 +7,14 @@
     margin: 0;
     padding: 0;
 
-    gap: 34px;
+    gap: ($gap * 1.7);
     @include md-min {
       display: flex;
     }
     @include md {
       position: absolute;
       top: 0;
-      right: (-$navbar-mobile-width - 20px);
+      right: (-$navbar-mobile-width - $gap);
 
       display: none;
 
@@ -28,8 +28,8 @@
   &__hamburger {
     position: relative;
 
-    width: 40px;
-    height: 30px;
+    width: ($gap * 2);
+    height: ($gap * 1.5);
 
     cursor: pointer;
     transition: 1s ease-in-out;

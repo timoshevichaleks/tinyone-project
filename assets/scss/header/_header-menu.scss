@@ -4,17 +4,17 @@
   display: flex;
   justify-content: space-between;
 
-  padding-top: 30px;
+  padding-top: ($gap * 1.5);
 
   @include md-min {
-    min-height: 140px;
+    min-height: ($gap * 7);
   }
   @include md {
-    min-height: 100px;
+    min-height: ($gap * 5);
   }
   &__item {
     &:last-of-type {
-      margin-right: -20px;
+      margin-right: -$gap;
     }
   }
   &__link {
@@ -22,7 +22,7 @@
 
     display: block;
 
-    padding: 10px 20px;
+    padding: ($gap * 0.5) $gap;
 
     letter-spacing: 0.03em;
 
