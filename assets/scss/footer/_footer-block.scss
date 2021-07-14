@@ -54,6 +54,7 @@
 
       border: none;
       border-radius: 4px;
+      outline: none;
       &::placeholder {
         color: $color-gray-light;
       }
